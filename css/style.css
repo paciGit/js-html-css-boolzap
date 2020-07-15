@@ -74,13 +74,13 @@ body {
   height: 100%;
 }
 
-/* .contacts-tot {
+/* .sez-dx-tot {
   width: 35%;
   height: 100%;
 } */
 
 .chat-tot {
-  width: 65%;
+  width: 70%;
   height: 100%;
   /* background: green; */
 }
@@ -203,13 +203,22 @@ body {
 
 /* Sezione contatti --------------------------------------- */
 /* Contacts */
-.contacts-tot {
-  height: calc(100% - 190px);
+.sez-dx-tot {
+  height: 100%;
   background: #fff;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 
-.contacts-in {
+.contacts {
+  height: 100%;
+}
+
+.contacts-tot {
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.sez-dx-in {
   width: 100%;
   height: 80px;
   align-items: center;
@@ -217,7 +226,7 @@ body {
   border-bottom: 1px solid #F5F5F5;
 }
 
-.contacts-in:hover {
+.sez-dx-in:hover {
   background: #f4f5f5;
 }
 
@@ -331,7 +340,7 @@ body {
   right: 6px;
   color: #B6B9BB;
   cursor: pointer;
-  display: none;
+  /* display: none; */
 }
 
 /* Typing */
