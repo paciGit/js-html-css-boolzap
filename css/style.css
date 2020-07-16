@@ -343,6 +343,45 @@ body {
   /* display: none; */
 }
 
+/* messaggio chat guy */
+.messaggio-chat-guy::after{
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.chat-guy-text-container {
+  min-width: 20%;
+  max-width: 60%;
+  position: relative;
+  margin: 5px 0;
+  padding: 15px 15px 20px 15px;
+  float: left;
+  background: white;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.chat-guy-text-container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.chat-guy-testo-messaggio {
+  float: left;
+  width: 100%
+}
+
+.chat-guy-message-time {
+  position: absolute;
+  bottom: 5px;
+  right: 6px;
+  font-size: 10px;
+  color: #B6B9BB;
+}
+
+
 /* Typing */
 .type-text {
   width: 100%;
