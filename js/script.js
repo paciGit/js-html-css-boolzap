@@ -1,138 +1,104 @@
-$( document ).ready(function() {
-  console.log("Testo prova");
+// General
+$(document).ready(function() {
 
-// VARIABILI -------------------------------------
- var ora = new Date().getHours();
- var minuti = new Date().getMinutes();
+  // Search
+  $('#search').keyup(function() {
+    search();
+  });
+
+  // Inverti all'inserimento di un testo, Mic & Arrow
+  $('.write input').keyup(function() {
+    var input = $('.write input').val();
+    if (input.length !== 0) {
+      $('.arrow').removeClass('not-display').addClass('display-block');
+      $('.microphone').removeClass('display-block').addClass('not-display');
+    } else {
+      $('.arrow').removeClass('display-block').addClass('not-display');
+      $('.microphone').removeClass('not-display').addClass('display-block');
+    }
+  });
+
+  // Invia un messaggio ad un Utente e ricevi una risposta dopo N secondi
+  $('#send').click(function() {
+    send();
+  });
+
+  $('.write input').keydown(function() {
+    if (event.which === 13) {
+      send();
+    }
+  });
+
+});
 
 
+// Funzioni
+function search() {
+  var search = $('#search').val().toLowerCase();
+  // Search
+  $('.user').each(function() {
+    var user = $(this).find('h2').text().toLowerCase();
+    if (user.includes(search)) {
+      $(this).show();
+    } else {
+      $(this).hide();
+    }
+  });
+}
 
- //FUNZIONI --------------------------------------
- // General
- function showSubmitIcon(){
-   $('.invia .fa-microphone').hide();
-   $('.invia .fa-paper-plane').show();
- }
-
- function hideSubmitIcon(){
-   $('.invia .fa-paper-plane').hide();
-   $('.invia .fa-microphone').show();
- }
-
- // Utilizzata per insertRandom & insertMessage
- function showIconInfo(){
-    $('.icon-info').hide();
-    $('.text-container-in').hover(
-      function(){
-        $('.icon-info', this).fadeIn('fast', 'linear');
-      },
-      function(){
-        $('.icon-info', this).fadeOut('fast', 'linear');
-      }
-    );
+// Invio, chat e utenti
+function send() {
+  var text = $('.write input').val();
+  var chat = $('.chat-utente.container-flex');
+  var bubble = $('.template .bubble').clone();
+  var contact = $('.user.select');
+  var info = $('.info-utente.container-flex');
+  var date = new Date;
+  var time = addZero(date.getHours()) + ':' + addZero(date.getMinutes());
+  if (text !== '') {
+    bubble.addClass('send');
+    bubble.children('p').text(text);
+    bubble.children('span').text(time);
+    chat.append(bubble);
+    contact.prependTo('.contact ul');
+    // scrollBottom();
+    contact.children('span').text(time);
+    info.find('span').text(time);
+    $('.write input').val('');
+    setTimeout(receive, 1000);
   }
+}
 
- function insertRandomReply(){
-   var randomReply = ['Ciao bello', 'Non posso parlare al momento, ti scrivo fra poco', 'Se ti va ci vediamo per un caffè e discutiamo.', 'Finalmente ricevo un tuo messaggio, ti eri perso?', 'Che bellezza sentirti, come stai??'];
-   var reply = randomReply[Math.floor(Math.random() * randomReply.length)];
+// Ricezione risposte casuali & varie
+function receive() {
+  var text = ['Ma di cosa stai parlando?', 'XD', 'Sisi, certo ;)', 'Okok', 'Certamente, come dici tu.'];
+  var textIndex = text[getRandomInclus(0, text.length - 1)];
+  var chat = $('.chat-utente.container-flex');
+  var bubble = $('.template .bubble').clone();
+  var contact = $('.user.select');
+  var date = new Date;
+  var time = addZero(date.getHours()) + ':' + addZero(date.getMinutes());
+  bubble.addClass('receive');
+  bubble.children('p').text(textIndex);
+  bubble.children('span').text(time);
+  chat.append(bubble);
+}
 
-   $('.section-utente').append('<div class="messaggio-chat-guy"> <div class="chat-guy-text-container text-container-in"> <p class="chat-guy-testo-messaggio"> ' + reply + '</p><p class="chat-guy-message-time"> <span class="hour">' + ora + '</span>:<span class="minute">' + minuti + '</span> </p> <div class="icon-info"> <i class="fas fa-chevron-down"></i> <div class="chat-guy-info">  </div> </div> </div>');
-
-   showIconaInfo();
- }
-
- function insertMessage() {
-    var messaggio = $('#type-msg').val(); //prendi il valore inserito nell'input #type-msg
-
-    // inserisci un div con il messaggio inserito nella section
-    $('.section-utente').append('<div class="msg-utente"> <div class="text-container text-container-in"> <p class="text-msg">' + messaggio + '</p> <p class="msg-time"> <span class="hour">' + ora + '</span>' + ':' + '<span class="minute">' + minuti + '</span> </p> <div class="icon-info"> <i class="fas fa-chevron-down"></i> <div class="info"> </div> </div> </div> </div>');
-    $('#type-msg').val('');
-
-    showIconInfo();
-    showIconInfo();
+function addZero(number) {
+  if (number < 10) {
+    number = '0' + number;
   }
+  return number;
+}
 
- //AZIONI ----------------------------------------
- //1. apparizione e sparizione icona Invio
- $('#type-msg').focusin(
-   showSubmitIcon
- );
+// Funzione variabile chatHeight
+function scrollBottom() {
+  var chatHeight = $('.chat-utente.container-flex').height();
+  $('.chat').scrollTop(chatHeight);
+}
 
- $('#type-msg').focusout(
-   function(){
-     if ($(this).val() == '') {
-       hideSubmitIcon();
-     } else {
-       showSubmitIcon();
-     }
-   }
- );
-
- $('.invia .fa-paper-plane').click(
-   hideSubmitIcon
- );
-
- // // 2. Apparizione icon-info (Da rivedere)
- // $('.icon-info').hide();
- // $('.text-container').hover(
- //   function(){
- //     $('.icon-info').fadeToggle('fast', 'linear')
- //     $('.icon-info', this).fadeToggle('fast', 'linear');
- //   },
- //   function(){
- //     $('.icon-info').fadeToggle('fast', 'linear')
- //     $('.icon-info', this).fadeToggle('fast', 'linear');
- //   }
- // );
-
-
- // 3. Inserisci messaggio al click Invio
- $('.invia .fa-paper-plane').click(
-   function(){
-      insertMessage();
-
-      setTimeout(insertRandomReply, 1000);
-
-   }
-  );
-
-  // 3(?) stessa cosa del punto 3 ma l'evento è scatenzato al keypress invece che al click
-  $("#type-msg").keypress(
-       function() {
-         showSubmitIcon(); {
-         if (event.keyCode === 13) {
-           insertMessage();
-           setTimeout(insertRandomReply, 1000);
-           hideSubmitIcon();
-         }
-  }
-
-  // 4. Gestione input cerca (utenti)
-    // var stringa1, stringa2;
-
-    $('#chat-search').keyup( //ogni volta che viene premuto un tasto(qualsiasi della tastiera) nel campo 'cerca'
-        function(){
-
-          var stringa1 = $('#chat-search').val().toLowerCase(); // salvarmi input utente in campo del filtro (stringa1)
-          console.log(stringa1);
-
-          // selezionare tutti i blocchi di contatto e ciclare tra di essi (each())
-          $('.contact-name').each(
-            function(){
-
-              var stringa2 = $(this).text().toLowerCase(); //salvo in una var il valore del testo del nome nel contatto (stringa2)
-              console.log(stringa2);
-
-              var confronto = stringa2.includes(stringa1); // confronto per vedere se la stringa inserita nell'input è inclusa nel nome del contatto stringa2.includes(stringa1)
-              console.log(confronto);
-
-               if (confronto) { //se l'occorenza è stata trovata lascio il blocco di contatto visibile
-
-               } else { // altrimenti lo rendo non visibile (this)
-                $(this).parents('.sez-dx-in').hide();
-              }
-
-            }
-          );
-
-      });
+function getRandomInclus(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}

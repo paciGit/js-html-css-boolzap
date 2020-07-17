@@ -1,267 +1,253 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boolzap</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
-  </head>
-  <body>
-
-    <!-- Background -->
-    <div class="container">
-
-      <div class="green-row"></div>
-      <!-- Sezione totale -->
-      <div class="main-screen">
-        <div class="main-screen-in container-flex">
-          <!-- Sezione Sx Contatti e profilo -->
-          <div class="sez-dx-tot">
-            <div class="sez-dx-in">
-
-              <div class="head profile container-flex">
-                <div class="image container-flex">
-                  <img class="profile-img" src="img/avatar.png" alt="Foto profilo">
-                </div>
-                <div class="icon container-flex">
-                  <i class="fas fa-circle-notch"></i>
-						      <i class="fas fa-comment-alt"></i>
-						      <i class="fas fa-ellipsis-v"></i>
-                </div>
-              </div>
-
-              <div class="notifiche container-flex">
-                <div class="notifiche-icon">
-                  <i class="fa fa-bell-slash" aria-hidden="true"></i>
-                </div>
-                <div class="notifiche-msg">
-                  <h4>Ricevi notifiche di nuovi messaggi</h4>
-                  <a href="#">Attiva notifiche desktop</a>
-                </div>
-              </div>
-
-              <div class="search container-flex">
-                <div class="search-in container-flex">
-                  <div class="icon container-flex">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                  </div>
-                  <div class="input container-flex">
-                    <input id="chat-search" type="text" placeholder="Cerca o inizia una nuova chat" name="" value="">
-                  </div>
-                </div>
-              </div>
-
-              <div class="contacts-tot">
-
-                <div class="contacts">
-                  <div class="sez-dx-in container-flex">
-                    <div class="profile-img-ut">
-                      <img class="contacts-img" src="img/contatto1.png" alt="Img profilo utenti">
-                    </div>
-                    <div class="name-time-ut container-flex">
-                      <div class="name-msg">
-                        <h3 class="contact-name">Steven</h3>
-                        <p class="last-msg-text">Ciao, ciao</p>
-                      </div>
-                      <div class="last-msg-time">
-                        <p class="last-time-ut">
-                          <span class="hour">12</span>:<span class="hour">12</span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="contacts">
-                  <div class="sez-dx-in container-flex">
-                    <div class="profile-img-ut">
-                      <img class="contacts-img" src="img/contatto2.png" alt="Img profilo utenti">
-                    </div>
-                    <div class="name-time-ut container-flex">
-                      <div class="name-msg">
-                        <h3 class="contact-name">Olmo</h3>
-                        <p class="last-msg-text">Devo avvisarti di una cosa.</p>
-                      </div>
-                      <div class="last-msg-time">
-                        <p class="last-time-ut">
-                          <span class="hour">12</span>:<span class="hour">12</span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="contacts">
-                  <div class="sez-dx-in container-flex">
-                    <div class="profile-img-ut">
-                      <img class="contacts-img" src="img/contatto4.png" alt="Img profilo utenti">
-                    </div>
-                    <div class="name-time-ut container-flex">
-                      <div class="name-msg">
-                        <h3 class="contact-name">Leo</h3>
-                        <p class="last-msg-text">Alla fine l'ho aspettata sotto casa per 2 ore!!</p>
-                      </div>
-                      <div class="last-msg-time">
-                        <p class="last-time-ut">
-                          <span class="hour">12</span>:<span class="hour">12</span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="contacts">
-                  <div class="sez-dx-in container-flex">
-                    <div class="profile-img-ut">
-                      <img class="contacts-img" src="img/contatto3.png" alt="Img profilo utenti">
-                    </div>
-                    <div class="name-time-ut container-flex">
-                      <div class="name-msg">
-                        <h3 class="contact-name">Farah</h3>
-                        <p class="last-msg-text">Grazie per la serata ;)</p>
-                      </div>
-                      <div class="last-msg-time">
-                        <p class="last-time-ut">
-                          <span class="hour">12</span>:<span class="hour">12</span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="contacts">
-                  <div class="sez-dx-in container-flex">
-                    <div class="profile-img-ut">
-                      <img class="contacts-img" src="img/contatto5.png" alt="Img profilo utenti">
-                    </div>
-                    <div class="name-time-ut container-flex">
-                      <div class="name-msg">
-                        <h3 class="contact-name">Jaden</h3>
-                        <p class="last-msg-text">Vabbè dai, basta parlarne.. ci vediamo dopo all'aperitivo!</p>
-                      </div>
-                      <div class="last-msg-time">
-                        <p class="last-time-ut">
-                          <span class="hour">12</span>:<span class="hour">12</span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="contacts">
-                  <div class="sez-dx-in container-flex">
-                    <div class="profile-img-ut">
-                      <img class="contacts-img" src="img/contatto6.png" alt="Img profilo utenti">
-                    </div>
-                    <div class="name-time-ut container-flex">
-                      <div class="name-msg">
-                        <h3 class="contact-name">Giacomino</h3>
-                        <p class="last-msg-text">Aldo ti saluta, ti manda i saluti di ringhio :D</p>
-                      </div>
-                      <div class="last-msg-time">
-                        <p class="last-time-ut">
-                          <span class="hour">12</span>:<span class="hour">12</span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <title>Boolzap</title>
+</head>
+<body>
+  <main>
+    <div class="container-background">
+      <div class="container-in">
+        <div class="row-left left">
+          <div class="top-content">
+            <img src="img/avatar.png" alt="ailequal.png">
+            <i class="fas fa-circle-notch"></i>
+            <i class="fas fa-comment-alt"></i>
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+          <div class="notification">
+            <i class="fas fa-bell-slash"></i>
+            <div>
+              <h2>Ricevi notifiche di nuovi messaggi</h2>
+              <h3>Attiva notifiche desktop</h3>
             </div>
           </div>
-
-          <!-- Sezione Dx chat e varie -->
-          <div class="chat-tot">
-            <div class="chat-in">
-
-              <div class="head chat-guy container-flex">
-                <div class="image container-flex">
-                  <img class="contacts-img" src="img/contatto2.png" alt="img profilo utenti">
-                </div>
-
-                <div class="chat-ut-name">
-                  <h3>Vincenzo</h3>
-                  <p>Ultimo accesso oggi alle 12.12</p>
-                </div>
-
-                <div class="icon flex-container">
-                  <i class="fas fa-search"></i>
-  					      <i class="fas fa-paperclip"></i>
-  					      <i class="fas fa-ellipsis-v"></i>
-                </div>
-              </div>
-
-              <div class="chat">
-                <div class="section-utente">
-
-                  <div class="msg-utente message">
-                    <div class="text-container text-container-in">
-                      <p class="text-msg">Prova Prova Prova Prova Prova</p>
-                      <p class="msg-time">
-                        <span class="hour">12</span>:<span class="minute">12</span>
-                      </p>
-                    </div>
-                    <div class="icon-info">
-                      <i class="fas fa-chevron-down"></i>
-                      <div class="info">
-                        <p class="delete-msg">Cancella Messaggio</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="messaggio-chat-guy message">
-                    <div class="chat-guy-text-container text-container-in">
-                      <p class="chat-guy-testo-messaggio">
-                      </p>
-                      <p class="chat-guy-message-time">
-                        <span class="hour">
-                        </span>
-                        :
-                        <span class="minute">
-                        </span>
-                      </p>
-                        <div class="icon-info">
-                          <i class="fas fa-chevron-down"></i>
-                          <div class="info">
-                            <p class="delete-msg">
-                              Cancella Messaggio
-                            </p>
-                          </div>
-                        </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-              <div class="type-text container-flex">
-                <div class="emojis container-flex">
-                  <i class="far fa-smile"></i>
-                </div>
-
-                <div class="input-chat container-flex">
-                  <input id="type-msg" type="text" placeholder="Scrivi un messaggio" name="" value="">
-                </div>
-
-                <div class="invia container-flex">
-                  <i class="fas fa-microphone"></i>
-                  <i class="fas fa-paper-plane"></i>
-                </div>
-              </div>
-
+          <div class="search">
+            <div>
+              <input id="search" type="search" placeholder="Cerca o inizia una nuova chat">
             </div>
           </div>
-
+          <div class="contact">
+            <ul>
+              <li>
+                <div class="user select" data-element="0">
+                  <img src="img/contatto1.png" alt="Steve">
+                  <div>
+                    <h2>Steve</h2>
+                    <h3>Dopo chiedo informazioni, e ti faccio sapere.</h3>
+                  </div>
+                  <span>09:40</span>
+                </div>
+              </li>
+              <li>
+                <div class="user not_select" data-element="1">
+                  <img src="img/contatto2.png" alt="Jhonny">
+                  <div>
+                    <h2>Jhonny</h2>
+                    <h3>Non so cosa sia successo!!</h3>
+                  </div>
+                  <span>19:34</span>
+                </div>
+              </li>
+              <li>
+                <div class="user not_select" data-element="2">
+                  <img src="img/contatto3.png" alt="Farah">
+                  <div>
+                    <h2>Farah</h2>
+                    <h3>Nessun problema caro..</h3>
+                  </div>
+                  <span>11:23</span>
+                </div>
+              </li>
+              <li>
+                <div class="user not_select" data-element="3">
+                  <img src="img/contatto4.png" alt="Leonard">
+                  <div>
+                    <h2>Leonard</h2>
+                    <h3>Buongiorno ;)</h3>
+                  </div>
+                  <span>07:30</span>
+                </div>
+              </li>
+              <li>
+                <div class="user not_select" data-element="4">
+                  <img src="img/contatto5.png" alt="Pablo">
+                  <div>
+                    <h2>Pablo</h2>
+                  <h3>Sei sicuro di quello che dici?</h3>
+                  </div>
+                  <span>09:22</span>
+                </div>
+              </li>
+              <li>
+                <div class="user not_select" data-element="5">
+                  <img src="img/contatto6.png" alt="Mario">
+                  <div>
+                    <h2>Mario</h2>
+                    <h3>Oggi non ci sono, devo riposare</h3>
+                  </div>
+                  <span>13:29</span>
+                </div>
+              </li>
+              <li>
+                <div class="user not_select" data-element="6">
+                  <img src="img/contatto7.png" alt="Mike">
+                  <div>
+                    <h2>Mike</h2>
+                    <h3>Ci vediamo alle 19, puntale!</h3>
+                  </div>
+                  <span>18:00</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row-right left">
+          <div class="top-content">
+            <div class="info-utente container-flex" data-element="0">
+              <img src="img/contatto1.png" alt="Steve">
+              <div>
+                <h2>Steve</h2>
+                <h3>Ultimo accesso alle <span>12:10</span></h3>
+              </div>
+            </div>
+            <div class="info-utente not-display" data-element="1">
+              <img src="img/contatto2.png" alt="Jhonny">
+              <div>
+                <h2>Jhonny</h2>
+                <h3>Ultimo accesso alle <span>16:30</span></h3>
+              </div>
+            </div>
+            <div class="info-utente not-display" data-element="2">
+              <img src="img/contatto3.png" alt="Farah">
+              <div>
+                <h2>Farah</h2>
+                <h3>Ultimo accesso alle <span>08:10</span></h3>
+              </div>
+            </div>
+            <div class="info-utente not-display" data-element="3">
+              <img src="img/contatto4.png" alt="Leonard">
+              <div>
+                <h2>Leonard</h2>
+                <h3>Ultimo accesso alle <span>07:30</span></h3>
+              </div>
+            </div>
+            <div class="info-utente not-display" data-element="4">
+              <img src="img/contatto5.png" alt="Pablo">
+              <div>
+                <h2>Pablo</h2>
+                <h3>Ultimo accesso alle <span>08:32</span></h3>
+              </div>
+            </div>
+            <div class="info-use not-display" data-element="5">
+              <img src="img/contatto6.png" alt="Mario">
+              <div>
+                <h2>Mario</h2>
+                <h3>Ultimo accesso alle <span>23:45</span></h3>
+              </div>
+            </div>
+            <div class="info-utente not-display" data-element="6">
+              <img src="img/contatto7.png" alt="Mike">
+              <div>
+                <h2>Mike</h2>
+                <h3>Ultimo accesso alle <span>18:20</span></h3>
+              </div>
+            </div>
+            <i class="fas fa-search"></i>
+            <i class="fas fa-paperclip"></i>
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+          <div class="chat">
+              <div class="chat-utente container-flex" data-element="0">
+                <div class="bubble send">
+                  <p>Hai saputo di ieri sera?</p>
+                  <span class="right">09:30</span>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="bubble receive">
+                  <p>Ero a casa, mi hanno chiamato tutta la serata ma dormivo.</p>
+                  <span class="right">09:34</span>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="bubble send">
+                  <p>Pensavo sapessi qualcosa!</p>
+                  <span class="right">09:35</span>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="bubble receive">
+                  <p>Dopo chiedo informazioni, e ti faccio sapere.</p>
+                  <span class="right">09:40</span>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+              </div>
+              <div class="chat-utente not-display" data-element="1">
+                <div class="bubble send">
+                  <p>Hai saputo di ieri sera?</p>
+                  <span class="right">18:20</span>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="bubble receive">
+                  <p>Non so cosa sia successo!!</p>
+                  <span class="right">19:34</span>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+              </div>
+              <div class="chat-utente not-display" data-element="2">
+                <div class="bubble send">
+                  <p>Scusami ma sono stato impegnato tutto il giorno.</p>
+                  <span class="right">11:00</span>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="bubble receive">
+                  <p>Nessun problema caro..</p>
+                  <span class="right">11:23</span>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+              </div>
+              <div class="chat-utente not-display" data-element="3">
+                <div class="bubble receive">
+                  <p>Buongiorno ;)</p>
+                  <span class="right">07:30</span>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+              </div>
+              <div class="chat-utente not-display" data-element="4">
+                <div class="bubble receive">
+                  <p>Sei sicuro di quello che dici?</p>
+                  <span class="right">09:22</span>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+              </div>
+              <div class="chat-utente not-display" data-element="5">
+                <div class="bubble receive">
+                  <p>Oggi non ci sono, devo riposare</p>
+                  <span class="right">13:29</span>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+              </div>
+              <div class="chat-utente not-display" data-element="6">
+                <div class="bubble receive">
+                  <p>Ci vediamo alle 19, puntale!</p>
+                  <span class="right">18:00</span>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+              </div>
+          </div>
+          <div class="write">
+            <i class="far fa-smile"></i>
+            <input type="text" name="chat" placeholder="Scrivi un messaggio">
+            <i id="send" class="fas fa-paper-plane arrow not-display"></i>
+            <i class="fas fa-microphone microphone display-block"></i>
+          </div>
         </div>
       </div>
-
     </div>
+  </main>
 
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/script.js"></script>
-  </body>
+  <script src="js/script.js" charset="utf-8"></script>
+</body>
 </html>
