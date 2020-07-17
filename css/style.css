@@ -296,6 +296,26 @@ ul {
   color: #7a7a7a;
 }
 
+.option {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 136px;
+  border-radius: 4px;
+  padding: 5px;
+  background-color: #f4f7f4;
+  text-align: center;
+}
+
+.option h2 {
+  margin: 5px;
+  cursor: pointer;
+}
+
+.option h2:hover {
+  text-decoration: underline;
+}
+
 .write {
   display: flex;
   justify-content: space-between;
@@ -317,4 +337,8 @@ ul {
   padding: 10px 20px;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
+}
+
+.template {
+  display: none;
 }

@@ -29,6 +29,20 @@ $(document).ready(function() {
     }
   });
 
+  // Al click di un utente, si aprirà la chat e i messaggi già inseriti
+  $('.user').click(function() {
+    changeChat($(this));
+  });
+
+  // Mostra e nascondi il menu dei bubble, con la possibilità di Eliminare
+  $(document).on('click', '.bubble i', function() {
+      toggleOption($(this));
+  });
+
+  $(document).on('click', '.delete', function() {
+      deleteBubble($(this));
+  });
+
 });
 
 
@@ -61,7 +75,6 @@ function send() {
     bubble.children('span').text(time);
     chat.append(bubble);
     contact.prependTo('.contact ul');
-    // scrollBottom();
     contact.children('span').text(time);
     info.find('span').text(time);
     $('.write input').val('');
@@ -91,10 +104,44 @@ function addZero(number) {
   return number;
 }
 
-// Funzione variabile chatHeight
-function scrollBottom() {
-  var chatHeight = $('.chat-utente.container-flex').height();
-  $('.chat').scrollTop(chatHeight);
+function changeChat(userSelect) {
+  var contactSelect = $('.user.select');
+  var dataElement = userSelect.attr('data-element');
+  var info = $(".info-utente[data-element='" + dataElement + "']");
+  var infoSelect = $('.info-utente.container-flex');
+  var chat = $(".chat-utente[data-element='" + dataElement + "']");
+  var chatSelect = $('.chat-utente.container-flex');
+  if (!userSelect.hasClass('select')) {
+    // Quando inserisco un messaggio la chat si dispone in alto
+    userSelect.removeClass('not_select').addClass('select');
+    contactSelect.removeClass('select').addClass('not_select');
+
+    // Al click della chat corrispondente, si avrà in alto la foto profilo e informazioni
+    info.removeClass('not-display').addClass('container-flex');
+    infoSelect.removeClass('container-flex').addClass('not-display');
+
+    chat.removeClass('not-display').addClass('container-flex');
+    chatSelect.removeClass('container-flex').addClass('not-display');
+  }
+}
+
+function toggleOption(userSelect) {
+  var optionTemplate = $('.template .option').clone();
+  var optionBubble = $('.bubble .option');
+  optionBubble.remove();
+  if (!userSelect.siblings().hasClass('option')) {
+    userSelect.parent().append(optionTemplate);
+    // console.log('if');
+  } else {
+    optionBubble.remove();
+    // console.log('else');
+  }
+}
+
+// Funzione data per eliminare il messaggio selezionato
+function deleteBubble(userSelect) {
+  var message = userSelect.closest('.bubble');
+  message.remove();
 }
 
 function getRandomInclus(min, max) {
