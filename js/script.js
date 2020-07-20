@@ -70,6 +70,7 @@ function send() {
   var date = new Date;
   var time = addZero(date.getHours()) + ':' + addZero(date.getMinutes());
   if (text !== '') {
+    // Per inserire testo all'interno della chat
     bubble.addClass('send');
     bubble.children('p').text(text);
     bubble.children('span').text(time);
@@ -126,15 +127,15 @@ function changeChat(userSelect) {
 }
 
 function toggleOption(userSelect) {
-  var optionTemplate = $('.template .option').clone();
+  var optionTemplate = $('.template .option');
   var optionBubble = $('.bubble .option');
   optionBubble.remove();
-  if (!userSelect.siblings().hasClass('option')) {
+  if (!userSelect.hasClass('option')) {
     userSelect.parent().append(optionTemplate);
-    // console.log('if');
+    console.log('if');
   } else {
-    optionBubble.remove();
-    // console.log('else');
+    optionBubble.remove(optionTemplate);
+    console.log('else');
   }
 }
 
@@ -144,6 +145,7 @@ function deleteBubble(userSelect) {
   message.remove();
 }
 
+// Funzione per testo ricevuto random
 function getRandomInclus(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
